@@ -1,6 +1,6 @@
 package com.flyer.impl;
 
-import com.flyer.CustomerService;
+import com.flyer.domain.Customer;
 
 public class CustomerServiceImpl implements CustomerService {
 
