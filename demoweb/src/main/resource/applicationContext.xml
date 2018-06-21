@@ -20,6 +20,6 @@
 		</property>
 	</bean>
 
-	<!--<import resource="classpath*:spring-db-mybatis.xml"/>-->
+	<import resource="classpath*:spring-db-mybatis.xml"/>
     <!--<import resource="support-dao-hessian.xml"/>-->
 </beans>

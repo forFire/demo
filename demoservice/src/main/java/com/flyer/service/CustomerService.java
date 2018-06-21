@@ -1,12 +1,11 @@
+package com.flyer.service;
+
 import com.flyer.domain.Customer;
+import com.flyer.util.PageInfo;
 
 public interface CustomerService {
 
- //    public
-
   PageInfo<Customer> list();
-
-
 
   void add(Customer customer);
 
