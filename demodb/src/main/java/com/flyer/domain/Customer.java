@@ -3,68 +3,106 @@ package com.flyer.domain;
 import java.io.Serializable;
 
 public class Customer implements Serializable {
-    private Integer fId;
+    private Integer id;
 
-    private String fName;
+    /**
+    * 姓名
+     */
+    private String name;
 
-    private String fPhone;
+    /**
+    * 手机号
+     */
+    private String phone;
 
-    private String fSex;
+    private String sex;
 
-    private String fCardId;
+    /**
+    * 身份证
+     */
+    private String idCard;
+
+    private String address;
 
     private static final long serialVersionUID = 1L;
 
-    public Customer(Integer fId, String fName, String fPhone, String fSex, String fCardId) {
-        this.fId = fId;
-        this.fName = fName;
-        this.fPhone = fPhone;
-        this.fSex = fSex;
-        this.fCardId = fCardId;
+    public Customer(Integer id, String name, String phone, String sex, String idCard, String address) {
+        this.id = id;
+        this.name = name;
+        this.phone = phone;
+        this.sex = sex;
+        this.idCard = idCard;
+        this.address = address;
     }
 
     public Customer() {
         super();
     }
 
-    public Integer getfId() {
-        return fId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setfId(Integer fId) {
-        this.fId = fId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getfName() {
-        return fName;
+    /**
+     * 姓名
+     */
+    public String getName() {
+        return name;
     }
 
-    public void setfName(String fName) {
-        this.fName = fName == null ? null : fName.trim();
+    /**
+     * 姓名
+     */
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getfPhone() {
-        return fPhone;
+    /**
+     * 手机号
+     */
+    public String getPhone() {
+        return phone;
     }
 
-    public void setfPhone(String fPhone) {
-        this.fPhone = fPhone == null ? null : fPhone.trim();
+    /**
+     * 手机号
+     */
+    public void setPhone(String phone) {
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getfSex() {
-        return fSex;
+    public String getSex() {
+        return sex;
     }
 
-    public void setfSex(String fSex) {
-        this.fSex = fSex == null ? null : fSex.trim();
+    public void setSex(String sex) {
+        this.sex = sex == null ? null : sex.trim();
     }
 
-    public String getfCardId() {
-        return fCardId;
+    /**
+     * 身份证
+     */
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setfCardId(String fCardId) {
-        this.fCardId = fCardId == null ? null : fCardId.trim();
+    /**
+     * 身份证
+     */
+    public void setIdCard(String idCard) {
+        this.idCard = idCard == null ? null : idCard.trim();
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address == null ? null : address.trim();
     }
 
     @Override
@@ -73,11 +111,12 @@ public class Customer implements Serializable {
         sb.append(getClass().getSimpleName());
         sb.append(" [");
         sb.append("Hash = ").append(hashCode());
-        sb.append(", fId=").append(fId);
-        sb.append(", fName=").append(fName);
-        sb.append(", fPhone=").append(fPhone);
-        sb.append(", fSex=").append(fSex);
-        sb.append(", fCardId=").append(fCardId);
+        sb.append(", id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", phone=").append(phone);
+        sb.append(", sex=").append(sex);
+        sb.append(", idCard=").append(idCard);
+        sb.append(", address=").append(address);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();

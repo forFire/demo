@@ -26,7 +26,7 @@ public class CustomerServiceImpl implements CustomerService {
         CustomerExample customerExample = new CustomerExample();
         CustomerExample.Criteria criteria = customerExample.createCriteria();
 
-        RowBounds rowBounds = new RowBounds((2-1) * 1,3);
+        RowBounds rowBounds = new RowBounds(0,3);
         List<Customer> rows =  customerMapper.selectByExampleWithRowbounds(customerExample,rowBounds);
         Map<String, Object> result = new HashMap<String, Object>();
         int total = customerMapper.countByExample(customerExample);

@@ -11,7 +11,7 @@ public interface CustomerMapper {
 
     int deleteByExample(CustomerExample example);
 
-    int deleteByPrimaryKey(Integer fId);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Customer record);
 
@@ -21,7 +21,7 @@ public interface CustomerMapper {
 
     List<Customer> selectByExample(CustomerExample example);
 
-    Customer selectByPrimaryKey(Integer fId);
+    Customer selectByPrimaryKey(Integer id);
 
     int updateByExampleSelective(@Param("record") Customer record, @Param("example") CustomerExample example);
 

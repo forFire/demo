@@ -43,7 +43,7 @@
     <bean id="db_daka_sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="db_daka_dataSource"/>
         <!-- 配置扫描Domain的包路径 -->
-        <property name="typeAliasesPackage" value="com.sinoiov.lhjh.db.daka"/>
+        <property name="typeAliasesPackage" value="com.flyer"/>
         <!-- 配置mybatis配置文件的位置 -->
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <!-- 配置扫描Mapper XML的位置 -->

@@ -8,8 +8,17 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/democommon/pom.xml" />
+        <option value="$PROJECT_DIR$/demodb/pom.xml" />
         <option value="$PROJECT_DIR$/demoweb/pom.xml" />
+        <option value="$PROJECT_DIR$/demoservice/pom.xml" />
+        <option value="$PROJECT_DIR$/demointerface/pom.xml" />
       </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </set>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">

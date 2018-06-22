@@ -3,11 +3,12 @@
 <mapper namespace="com.flyer.mapper.CustomerMapper" >
   <resultMap id="BaseResultMap" type="com.flyer.domain.Customer" >
     <constructor >
-      <idArg column="f_id" jdbcType="INTEGER" javaType="java.lang.Integer" />
-      <arg column="f_name" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="f_phone" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="f_sex" jdbcType="VARCHAR" javaType="java.lang.String" />
-      <arg column="f_card_id" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="phone" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="sex" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="id_card" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="address" jdbcType="VARCHAR" javaType="java.lang.String" />
     </constructor>
   </resultMap>
   <sql id="Example_Where_Clause" >
@@ -69,7 +70,7 @@
     </where>
   </sql>
   <sql id="Base_Column_List" >
-    f_id, f_name, f_phone, f_sex, f_card_id
+    id, name, phone, sex, id_card, address
   </sql>
   <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.flyer.domain.CustomerExample" >
     select
@@ -90,11 +91,11 @@
     select 
     <include refid="Base_Column_List" />
     from f_customer
-    where f_id = #{fId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from f_customer
-    where f_id = #{fId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </delete>
   <delete id="deleteByExample" parameterType="com.flyer.domain.CustomerExample" >
     delete from f_customer
@@ -103,45 +104,51 @@
     </if>
   </delete>
   <insert id="insert" parameterType="com.flyer.domain.Customer" >
-    insert into f_customer (f_id, f_name, f_phone, 
-      f_sex, f_card_id)
-    values (#{fId,jdbcType=INTEGER}, #{fName,jdbcType=VARCHAR}, #{fPhone,jdbcType=VARCHAR}, 
-      #{fSex,jdbcType=VARCHAR}, #{fCardId,jdbcType=VARCHAR})
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into f_customer (name, phone, sex, 
+      id_card, address)
+    values (#{name,jdbcType=VARCHAR}, #{phone,jdbcType=VARCHAR}, #{sex,jdbcType=VARCHAR}, 
+      #{idCard,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.flyer.domain.Customer" >
+    <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER" >
+      SELECT LAST_INSERT_ID()
+    </selectKey>
     insert into f_customer
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="fId != null" >
-        f_id,
+      <if test="name != null" >
+        name,
       </if>
-      <if test="fName != null" >
-        f_name,
+      <if test="phone != null" >
+        phone,
       </if>
-      <if test="fPhone != null" >
-        f_phone,
+      <if test="sex != null" >
+        sex,
       </if>
-      <if test="fSex != null" >
-        f_sex,
+      <if test="idCard != null" >
+        id_card,
       </if>
-      <if test="fCardId != null" >
-        f_card_id,
+      <if test="address != null" >
+        address,
       </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="fId != null" >
-        #{fId,jdbcType=INTEGER},
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
       </if>
-      <if test="fName != null" >
-        #{fName,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="fPhone != null" >
-        #{fPhone,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="fSex != null" >
-        #{fSex,jdbcType=VARCHAR},
+      <if test="idCard != null" >
+        #{idCard,jdbcType=VARCHAR},
       </if>
-      <if test="fCardId != null" >
-        #{fCardId,jdbcType=VARCHAR},
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -154,20 +161,23 @@
   <update id="updateByExampleSelective" parameterType="map" >
     update f_customer
     <set >
-      <if test="record.fId != null" >
-        f_id = #{record.fId,jdbcType=INTEGER},
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.fName != null" >
-        f_name = #{record.fName,jdbcType=VARCHAR},
+      <if test="record.name != null" >
+        name = #{record.name,jdbcType=VARCHAR},
       </if>
-      <if test="record.fPhone != null" >
-        f_phone = #{record.fPhone,jdbcType=VARCHAR},
+      <if test="record.phone != null" >
+        phone = #{record.phone,jdbcType=VARCHAR},
       </if>
-      <if test="record.fSex != null" >
-        f_sex = #{record.fSex,jdbcType=VARCHAR},
+      <if test="record.sex != null" >
+        sex = #{record.sex,jdbcType=VARCHAR},
       </if>
-      <if test="record.fCardId != null" >
-        f_card_id = #{record.fCardId,jdbcType=VARCHAR},
+      <if test="record.idCard != null" >
+        id_card = #{record.idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="record.address != null" >
+        address = #{record.address,jdbcType=VARCHAR},
       </if>
     </set>
     <if test="_parameter != null" >
@@ -176,11 +186,12 @@
   </update>
   <update id="updateByExample" parameterType="map" >
     update f_customer
-    set f_id = #{record.fId,jdbcType=INTEGER},
-      f_name = #{record.fName,jdbcType=VARCHAR},
-      f_phone = #{record.fPhone,jdbcType=VARCHAR},
-      f_sex = #{record.fSex,jdbcType=VARCHAR},
-      f_card_id = #{record.fCardId,jdbcType=VARCHAR}
+    set id = #{record.id,jdbcType=INTEGER},
+      name = #{record.name,jdbcType=VARCHAR},
+      phone = #{record.phone,jdbcType=VARCHAR},
+      sex = #{record.sex,jdbcType=VARCHAR},
+      id_card = #{record.idCard,jdbcType=VARCHAR},
+      address = #{record.address,jdbcType=VARCHAR}
     <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
@@ -188,28 +199,32 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.flyer.domain.Customer" >
     update f_customer
     <set >
-      <if test="fName != null" >
-        f_name = #{fName,jdbcType=VARCHAR},
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
       </if>
-      <if test="fPhone != null" >
-        f_phone = #{fPhone,jdbcType=VARCHAR},
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
       </if>
-      <if test="fSex != null" >
-        f_sex = #{fSex,jdbcType=VARCHAR},
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
       </if>
-      <if test="fCardId != null" >
-        f_card_id = #{fCardId,jdbcType=VARCHAR},
+      <if test="idCard != null" >
+        id_card = #{idCard,jdbcType=VARCHAR},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
       </if>
     </set>
-    where f_id = #{fId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.flyer.domain.Customer" >
     update f_customer
-    set f_name = #{fName,jdbcType=VARCHAR},
-      f_phone = #{fPhone,jdbcType=VARCHAR},
-      f_sex = #{fSex,jdbcType=VARCHAR},
-      f_card_id = #{fCardId,jdbcType=VARCHAR}
-    where f_id = #{fId,jdbcType=INTEGER}
+    set name = #{name,jdbcType=VARCHAR},
+      phone = #{phone,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      id_card = #{idCard,jdbcType=VARCHAR},
+      address = #{address,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
   </update>
   <select resultMap="BaseResultMap" parameterType="com.flyer.domain.CustomerExample" id="selectByExampleWithRowbounds" >
     select
