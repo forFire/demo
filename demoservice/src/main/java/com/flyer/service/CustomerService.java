@@ -1,12 +1,14 @@
 package com.flyer.service;
 
+import com.flyer.PageInfo;
 import com.flyer.domain.Customer;
-import com.flyer.util.PageInfo;
 
 public interface CustomerService {
 
-  PageInfo<Customer> list();
+  PageInfo<Customer> list(PageInfo pageInfo);
 
-  void add(Customer customer);
+  int saveorUpdate(Customer customer);
+
+  void delete(Integer id);
 
 }

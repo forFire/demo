@@ -14,9 +14,10 @@
 <script type="text/javascript" src="<%=basePath%>/js/datepicker.js"></script>
 <script type="text/javascript" src="<%=basePath%>/js/jquery.md5.js"></script>
 
-<link rel="stylesheet" type="text/css" href="<%=basePath%>js/jquery-easyui-1.4.2/themes/default/easyui.css" />
-<link rel="stylesheet" type="text/css" href="<%=basePath%>js/jquery-easyui-1.4.2/themes/icon.css" />
-
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/js/jquery-easyui-1.4.2/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/js/jquery-easyui-1.4.2/themes/icon.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/js/jquery-easyui-1.4.2/themes/default/easyui.css" />
+<link rel="stylesheet" type="text/css" href="<%=basePath%>/js/jquery-easyui-1.4.2/themes/icon.css" />
 
 <script type="text/javascript">
 	var swindow;
