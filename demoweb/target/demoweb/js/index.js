@@ -36,7 +36,7 @@ $(document).ready(function () {//datagrid设置
                     if (value == 'admin') {
                         return 'background:blue;';
                     }
-                },
+                 },
                 editor: {
                     type: 'validatebox',
                     options: {
@@ -44,6 +44,19 @@ $(document).ready(function () {//datagrid设置
                         missingMessage: '客户名称必填!'
                     }
                 }
+                },
+                {
+                    field: 'idCardImg',
+                    title: '身份证照片',
+                    align: 'center',
+                    width: 30,
+                    styler: function (value, record) {
+                        if (value == 'admin') {
+                            return 'background:blue;';
+                        }
+                    },formatter: function(value){
+                              return "<img style='width:24px;height:24px;' border='1' src='"+value+"'/>";  ;
+                    }
             }, {
                 field: 'phone',
                 title: 'phone',
@@ -73,6 +86,7 @@ function edit() {
     if (row) {
         $("#dlg").dialog("open").dialog('setTitle', '编辑');
         $("#fm").form("load", row);
+        $("#idCardImgShow").attr("src",row.idCardImg);//显示图片
         // url = "cumstomer/save.do?id=" + row.ID;
     }
 }
@@ -148,11 +162,11 @@ function setImg(obj){//用于进行图片上传，返回地址
         dataType:"json",
         success: function(suc) {
             if(suc.code==0){
-                $("#thumbUrl").val(suc.message);//将地址存储好
-                $("#thumburlShow").attr("src",suc.message);//显示图片
+                $("#idCardImg").val(suc.message);//将地址存储好
+                $("#idCardImgShow").attr("src",suc.message);//显示图片
             }else{
                 alertLayel("上传失败");
-                $("#url").val("");
+                $("#idCardImg").val("");
                 $(obj).val('');
             }
         },

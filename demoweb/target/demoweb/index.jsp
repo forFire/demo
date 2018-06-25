@@ -28,12 +28,11 @@
                 <input name="phone" class="easyui-validatebox" required="true"/>
             </div>
 
-
             <div class="row">
                 <span class="personattr">身份证正面照片:</span>
-                <input type="hidden" name="img"  id="thumbUrl"/>
+                <input type="hidden" name="idCardImg"  id="idCardImg"/>
                 <input type="file" name="logoFile" id="logoFile" onchange="setImg(this);">
-                <span><img id="thumburlShow" src="" width="120" height="120"/></span>
+                <span><img id="idCardImgShow" src="" width="120" height="120"/></span>
             </div>
 
             <%--<div class="fitem">--%>
