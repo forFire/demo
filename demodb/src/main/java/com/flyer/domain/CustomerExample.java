@@ -513,6 +513,76 @@ public class CustomerExample {
             addCriterion("address not between", value1, value2, "address");
             return (Criteria) this;
         }
+
+        public Criteria andIdCardImgIsNull() {
+            addCriterion("id_card_img is null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgIsNotNull() {
+            addCriterion("id_card_img is not null");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgEqualTo(String value) {
+            addCriterion("id_card_img =", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgNotEqualTo(String value) {
+            addCriterion("id_card_img <>", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgGreaterThan(String value) {
+            addCriterion("id_card_img >", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgGreaterThanOrEqualTo(String value) {
+            addCriterion("id_card_img >=", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgLessThan(String value) {
+            addCriterion("id_card_img <", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgLessThanOrEqualTo(String value) {
+            addCriterion("id_card_img <=", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgLike(String value) {
+            addCriterion("id_card_img like", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgNotLike(String value) {
+            addCriterion("id_card_img not like", value, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgIn(List<String> values) {
+            addCriterion("id_card_img in", values, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgNotIn(List<String> values) {
+            addCriterion("id_card_img not in", values, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgBetween(String value1, String value2) {
+            addCriterion("id_card_img between", value1, value2, "idCardImg");
+            return (Criteria) this;
+        }
+
+        public Criteria andIdCardImgNotBetween(String value1, String value2) {
+            addCriterion("id_card_img not between", value1, value2, "idCardImg");
+            return (Criteria) this;
+        }
     }
 
     public static class Criteria extends GeneratedCriteria {

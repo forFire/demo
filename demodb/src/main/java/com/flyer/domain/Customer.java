@@ -24,15 +24,18 @@ public class Customer implements Serializable {
 
     private String address;
 
+    private String idCardImg;
+
     private static final long serialVersionUID = 1L;
 
-    public Customer(Integer id, String name, String phone, String sex, String idCard, String address) {
+    public Customer(Integer id, String name, String phone, String sex, String idCard, String address, String idCardImg) {
         this.id = id;
         this.name = name;
         this.phone = phone;
         this.sex = sex;
         this.idCard = idCard;
         this.address = address;
+        this.idCardImg = idCardImg;
     }
 
     public Customer() {
@@ -105,6 +108,14 @@ public class Customer implements Serializable {
         this.address = address == null ? null : address.trim();
     }
 
+    public String getIdCardImg() {
+        return idCardImg;
+    }
+
+    public void setIdCardImg(String idCardImg) {
+        this.idCardImg = idCardImg == null ? null : idCardImg.trim();
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -117,6 +128,7 @@ public class Customer implements Serializable {
         sb.append(", sex=").append(sex);
         sb.append(", idCard=").append(idCard);
         sb.append(", address=").append(address);
+        sb.append(", idCardImg=").append(idCardImg);
         sb.append(", serialVersionUID=").append(serialVersionUID);
         sb.append("]");
         return sb.toString();
