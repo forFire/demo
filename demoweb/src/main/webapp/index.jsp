@@ -4,7 +4,7 @@
 <jsp:include page="/view/commons/commons.jsp"></jsp:include>
 <head>
     <title>管理</title>
-    <script type="text/javascript" src="view/commons/index.js"></script>
+    <script type="text/javascript" src="view/customer/index.js"></script>
 </head>
 <body>
 
@@ -67,8 +67,13 @@
     <div data-options="region:'west',split:true" title="左侧" style="width: 200px;">
         <a href="index.jsp" >用户页面</a>
         </br>
-        <a href="index.jsp" >订单页面</a>
+        <a href="/view/register/register.html" >注册页面</a>
         </br>
+        <a href="/view/login/login.html" >登陆页面</a>
+        </br>
+
+
+
    <%--     </br>
         <a href="/pages/resume/list.jsp" >订单页面</a>
         </br>

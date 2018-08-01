@@ -21,7 +21,7 @@ function valForm(){
     //     alert("不符合年龄");
     //     return false;
     // }else{
-        document.forms[0].action="../../../register/saveUser.do";
+        document.forms[0].action="../../../login/login.do";
         document.forms[0].submit();
         return false;
     // }

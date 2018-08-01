@@ -93,7 +93,12 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 
-
+        <table tableName="f_user" domainObjectName="User"
+               enableCountByExample="true" enableUpdateByExample="true"
+               enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
 
 
     </context>
