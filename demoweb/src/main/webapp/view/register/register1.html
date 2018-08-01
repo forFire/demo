@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>注册账号</title>
+<style type="text/css">
+html { color:#333;background:#fff; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%;}
+body,p,ul,ol,li,img,h1,h2,h3,h4,h5,h6,form,fieldset,legend,select,input{margin:0; padding:0;}
+body,button,input,select,textarea{font:14px/1.8 "Helvetica Neue",Helvetica,"PingFang SC","Microsoft YaHei",
+"Hiragino Sans GB","WenQuanYi Micro Hei",Arial,sans-serif;}
+h1,h2,h3,h4,h5,h6 {font-size:100%;}
+button, input, select, textarea {font-size: 100%;}
+ul,ol,li{list-style:none;}
+fieldset,img{border:0;}
+p{text-indent:2em;}
+a,a:link,a:visited{color:#333333; text-decoration:none;}
+a:hover{color:#326ca6; text-decoration:underline;}
+.clearfix:after{content:'\0020'; display:block; clear:both; height:0;}
+.clearfix{zoom:1;}
+.clearfloat{ clear:both;height:0;line-height:0;font-size:0; overflow:hidden;}
+.headerbackground {
+	width:100%;
+	height:120px;
+	background:url(../images/1.jpg) top center no-repeat;
+	background-color: #fff;
+	margin-bottom: 20px;
+	}
+.content {
+	width: 1180px;
+	margin: 0 auto;
+	overflow: hidden;
+	}	
+.left{
+	width: 570px;
+	float: left;
+	margin-right: 20px;
+	}	
+.right{
+	width: 570px;
+	float: right;
+	margin-left: 20px;
+	}
+.table {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: grey;
+}	
+.tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}	
+.content tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+	height: 60px;
+    line-height: 40px;
+}
+.td, .th {
+    display: table-cell;
+    vertical-align: inherit;
+}	
+.content th {
+    font-weight: 400;
+    text-align: right;
+	font-size: 16px;
+    padding-right: 10px;
+    color: #666;
+}	
+.content .td-first {
+    width: 216px;
+}	
+.required {
+    color: #e85759;
+    padding: 0 4px;
+    vertical-align: inherit;
+}
+.content td {
+    text-align: left;
+    position: relative;
+}
+.content .td-input {
+    width: 350px;
+}	
+.smzc-input {
+    width: 336px;
+    height: 40px;
+    line-height: 40px;
+    border: 1px solid #cdcdcd;
+    border-radius: 4px;
+    vertical-align: top;
+    padding: 0 10px;
+    outline: 0;
+}	
+.yhm-select select {
+    width: 359px;
+    height: 41px;
+    border-radius: 4px;
+    padding: 0 10px;
+    border: 1px solid #cdcdcd;
+}	
+.label {
+    cursor: default;
+}	
+.enter-btn {
+    border: 1px solid #248992;
+    background: #2fbca0;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #fff;
+    width: 340px;
+    outline: 0;
+}		
+</style>	
+</head>
+<body>
+<div class="headerbackground"></div>
+<div class="content">
+	<div class="left">
+		<table>
+        	<tbody>
+				<tr>
+                	<th class="td-first"><span class="required" aria-required="true">*</span>用户名</th>
+                    <td class="td-input">
+                    	<input type="hidden" name="from" value="archive" id="regfrom">
+                        <input type="text" name="mphone" maxlength="11" value="" id="mphone" class="smzc-input" autocomplete="off">
+                    </td>
+                </tr>
+                <tr>
+                    <th><span class="required" aria-required="true">*</span>Email</th>
+                    <td>
+                        <input type="text" name="email" value="" id="email" class="smzc-input" onblur="checkEmail()" autocomplete="off">
+                    </td>  
+                </tr>
+                <tr>
+                    <th><span class="required" aria-required="true">*</span>密码</th>
+                    <td>
+                        <input type="password" name="password" id="password" class="smzc-input"><div id="password_container" class="strengthMeter" style="display: none;"><div id="password_bar" class="scoreBar"></div><div id="password_tips"></div></div>
+                    </td>
+                </tr>
+              <tr>
+                    <th><span class="required" aria-required="true">*</span>密码确认</th>
+                    <td>
+                        <input type="password" name="password1" id="password1" class="smzc-input">
+                    </td>   
+                </tr>    
+                <tr>
+                    <th><span class="required" aria-required="true">*</span>性别</th>
+                    <td>
+                        <div class="yhm-select">        
+                            <select name="credentialtype" id="credentialtype">
+    							<option value="SFZ">男</option>
+    							<option value="SFZ_GAT">女</option>
+							</select>        
+                        </div>
+                    </td>   
+                </tr>
+                <tr>
+                    <th><span class="required" aria-required="true">*</span>手机号码</th>
+                    <td>
+                        <input type="text" name="sfzh" value="" id="sfzh" class="smzc-input" autocomplete="off">
+                    </td>
+                </tr>
+				<tr>
+					<th class="wap-hide">&nbsp;</th>
+					<td>
+						<label for="serviceNote_yes" class="color666">
+                    		<input type="checkbox" name="serviceNote" id="serviceNote_yes" value="1" checked="checked" style="margin-bottom: 2px;">
+                                我已阅读并同意
+							<a href="" target="_blank" class="acccept">《用户协议》</a>
+						</label>
+					</td>	
+                </tr>    
+                <tr>
+                    <th class="wap-hide">&nbsp;</th>
+                    <td colspan="4">
+                        <input type="submit" id="newbutton" name="newbutton" value="立即注册" class="enter-btn">
+                    </td>
+                </tr>     
+        	</tbody>
+		</table>
+	</div>
+	<div class="right">
+    	<img src="../images/2.jpg" width="480" height="474" alt=""/>
+	</div>
+</div>	
+</body>
+</html>
