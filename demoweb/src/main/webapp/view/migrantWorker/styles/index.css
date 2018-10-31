@@ -1,0 +1,732 @@
+html, body, * {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-size: 62.5%;
+    font-family: 'SimHei';
+    font-style: normal;
+    list-style-type: none;
+    touch-action: pan-y;
+}
+
+html:after, html::before, body:after, body::before, *:after, *::before {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+    /*background-color: #fff;*/
+}
+
+[v-cloak] {
+    display: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.hide01 {
+    visibility: hidden;
+}
+
+.show {
+    display: block !important;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.half-line {
+    background-color: #000;
+}
+
+.half-line.vertical {
+    height: 100%;
+    width: 1px;
+    transform: scaleX(0.5);
+}
+
+.half-line.horizontal {
+    width: 100%;
+    height: 1px;
+    transform: scaleY(0.5);
+}
+
+@-webkit-keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    66% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.error-tips {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -120px;
+    width: 240px;
+    height: auto;
+    padding: 10px 20px;
+    line-height: 20px;
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 100;
+}
+
+.error-tips.fade-out {
+    animation: fadeOut 2s ease-in-out;
+}
+
+a[href*="http://www.cnzz.com/stat/website.php"] {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+.maximg {
+    width: 100%;
+    height: 100%;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+    margin-left: -20px;
+    background: url("../images/circlebg.png") center no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.circlecenter {
+    display: block;
+    width: 21px;
+    height: 21px;
+    margin: 10px auto 0;
+    background: url("../images/circle.png") center no-repeat;
+    background-size: 100%;
+    animation: rotate_infinite .8s linear infinite;
+    -webkit-animation: rotate_infinite .8s linear infinite;
+    margin-left: 10px;
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+
+@-webkit-keyframes rotate_infinite {
+    0% {
+        transform: rotate(0);
+        -webkit-transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.imgwrap {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 业务逻辑代码 */
+.index {
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+.ifragme_wrap {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #e90909;
+}
+
+.container {
+    border: 1px solid #ccc;
+}
+
+.swiper1 {
+    width: 100%;
+    /*background-color: #3d3d3d;*/
+    overflow: visible;
+    z-index: 10;
+}
+
+.swiper1_copy {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(42,38,94);
+}
+
+.swiper1 .swiper-slide_time {
+    color: #fbfbfb;
+    font-size: 15px;
+    text-align: center;
+}
+
+.swiper1 .swiper-slide_state {
+    color: #fbfbfb;
+    font-size: 12.5px;
+    text-align: center;
+}
+
+.swiper1 .selected {
+    position: relative;
+    background-color: #e90909;
+}
+
+.swiper1 .selected:after {
+    position: absolute;
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e90909;
+    top: 50px;
+    left: calc(50% - 2.5px);
+}
+
+.swiper-slide {
+    /*text-align: center;*/
+    font-size: 16px;
+    color: #fff;
+    height: 50px;
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    /*cursor: pointer;*/
+}
+
+.red-cover {
+    height: 50px;
+    width: 60px;
+    background-color: red;
+    position: absolute;
+    left: calc(50% - 30px);
+    top: 0;
+}
+/*下三角*/
+.red-cover:after {
+    position: absolute;
+    content: "";
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e90909;
+    top: 50px;
+    left: calc(50% - 2.5px);
+}
+
+.swiper2 {
+    width: 100%;
+    height: 100%;
+}
+
+.bodybg{
+    width: 100%;
+    height: 100%;
+    background: url("../images/listbg.png") repeat;
+    background-size: 100%;
+}
+
+iframe {
+    margin: 0px 0px;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    position: absolute;
+}
+
+.full {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.swiper2 .swiper-slide {
+    /*height: calc(100vh - 50px);*/
+    /*background-color: cyan;*/
+    color: #fff;
+    text-align: center;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+}
+
+.list-head {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #fff;
+}
+
+.list-head__tile {
+    position: absolute;
+    line-height: 50px;
+    left: 10px;
+    font-size: 15px;
+    color: #000;
+}
+
+.list-head__rule {
+    position: absolute;
+    /*line-height: 50px;*/
+    right: 0px;
+    top: 15px;
+    font-size: 15px;
+    color: #000;
+    background-color: #e5e5e5;
+    box-sizing: border-box;
+    border-left: 10px solid #e5e5e5;
+    border-right: 5px solid #e5e5e5;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+/*图片*/
+.list-item-container__pic {
+    position: relative;
+}
+
+.mb {
+    margin-bottom: 100%;
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.pic__box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/*规则*/
+.rule-container {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow: scroll;
+}
+
+.rule-wrapper {
+    border-radius: 5px;
+    margin: 20% 15px;
+    padding: 23px 15px;
+    background-color: #fff;
+}
+
+.rule-wrapper h3 {
+    color: #bc252e;
+    font-size: 18px;
+    text-align: center;
+    font-weight: normal;
+}
+
+.rule-wrapper__scroll {
+    margin-top: 26px;
+    overflow: scroll;
+}
+
+.rule-wrapper p {
+    color: #000000;
+    font-size: 14px;
+    margin-bottom: 22px;
+}
+
+.rule-wrapper .btn {
+    height: 45px;
+    line-height: 45px;
+    background-color: #bc252e;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+}
+
+/*滑动列表显示*/
+
+/* 业务逻辑代码 */
+.list {
+    width: 100%;
+    overflow: hidden;
+    /*height:  calc(100vh - 233.5px);*/
+    height: 100%;
+    /*height: 200px;*/
+    /*overflow:scroll;*/
+    /*background: url("../images/collect_main.png");*/
+    /*-webkit-background-size: cover;*/
+    /*background-size: 100%;*/
+    /*background-color: white;*/
+    /*-webkit-tab-highlight-color: rgba(255,255,255,1);*/
+}
+
+.main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main .warpper {
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    /*background-color: #fff;*/
+}
+
+.scroller {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.scroller .warpper {
+    position: absolute;
+    width: 100%;
+}
+
+.scroller-pullUp {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    color: #999;
+    /*background-color: #f2f2f2;*/
+    background-color: black;
+    overflow: hidden;
+}
+
+.upwrap {
+    width: 100%;
+    overflow: hidden;
+    height: 30px;
+    margin-top: 10px;
+}
+
+.pull-up-msg {
+    display: inline-block;
+    width: 21px;
+    height: 30px;
+    background: url("../images/circle.png") center no-repeat;
+    background-size: 21px;
+    animation: rotate_infinite .8s linear infinite;
+    -webkit-animation: rotate_infinite .8s linear infinite;
+    margin-left: 10px;
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+
+.pulltxt {
+    position: relative;
+    top: -10px;
+    left: 10px;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    color: #999;
+    font-size: 14px;
+}
+
+.scroller-pullDown {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    /*background-color: #f2f2f2;*/
+    background-color: black;
+}
+
+.pull-down-msg {
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    background: url("../images/circle.png") center no-repeat;
+    background-size: 21px;
+    margin: 0 auto;
+    animation: rotate_infinite .8s linear infinite;
+    -webkit-animation: rotate_infinite .8s linear infinite;
+    transform-origin: 50% 50%;
+    -webkit-transform-origin: 50% 50%;
+}
+
+/*list.item*/
+.vlist {
+    width: 100%;
+    overflow: hidden;
+    /*background-color: #fff;*/
+    padding: 10px 2% 0;
+}
+
+.vlist .vbox {
+    position: relative;
+    width: 49%;
+    overflow: hidden;
+    /*background-color: #fff9df;*/
+    border-radius: 3px;
+    margin: 2% 2% 0 0;
+    float: left;
+}
+
+.vimgwrap {
+    position: absolute;
+    top: 0;
+    left: 1px;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+}
+
+.vimgwrap img {
+    width: 100%;
+    height: 100%;
+    border-radius: 3px;
+    object-fit: cover;
+}
+
+.vbox:nth-child(2n) {
+    margin-right: 0;
+}
+
+.vmb {
+    margin-bottom: 136%;
+}
+
+.binfo {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 64.5px;
+    background-size: 1px 64.5px;
+}
+
+.vinfo {
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    width: 100%;
+    height: 30px;
+    padding: 0 8px;
+}
+
+.vinfo .user {
+    float: left;
+    width: 30px;
+    height: 30px;
+    background-color: #000;
+    border-radius: 200px;
+}
+
+.vinfo .user img {
+    width: 100%;
+    height: 100%;
+    border-radius: 200px;
+    object-fit: cover;
+}
+
+.vinfo .like {
+    float: right;
+    height: 30px;
+}
+
+.vinfo .like span {
+    display: inline-block;
+    float: left;
+}
+
+/*新添加listitem显示*/
+.list_item {
+    position: relative;
+    width: 92%;
+    /*height: 100%;*/
+    /*margin: 0 auto;*/
+    left: 4%;
+    /*padding-bottom: 10px;*/
+    /*background: #ffffff;*/
+}
+
+.newlistwrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.goodswrap {
+    width: 100%;
+    overflow: hidden;
+    /*height: 100%;*/
+}
+
+.goods {
+    width: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+    background: white;
+}
+
+.goodsimg {
+    float: left;
+    width: 72px;
+    height: 84.5px;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.goodstxt {
+    float: left;
+    margin-left: 22px;
+    max-width: 220px;
+    margin-top: 21px;
+}
+
+.goodsimg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.goodsname {
+    width: 100%;
+    font-size: 14px;
+    color: #030000;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: -webkit-box;
+}
+
+.goodprice {
+    width: 100%;
+    font-size: 12px;
+    color: #a4101a;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    margin-top: 18px;
+    -webkit-box-orient: vertical;
+}
+
+.div-inline {
+    display: inline;
+    font-size: 12px;
+}
+
+.goodpricenumber {
+    font-size: 15px;
+    display: inline;
+}
+
+.goodoldprice {
+    width: 100%;
+    font-size: 12px;
+    color: #959595;
+    overflow: hidden;
+    margin-top: 5px;
+    text-align: left;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+/*list_item分隔线*/
+/*.list_item:after {*/
+/*content: '';*/
+/*position: absolute;*/
+/*width: 92%;*/
+/*height: 1px;*/
+/*top: 117px;*/
+/*left: 4%;*/
+/*background-color: #f2f2f2;*/
+/*}*/
+
+.line {
+    width: 100%;
+    height: 1px;
+    background-color: #f2f2f2;
+    /*overflow: hidden;*/
+    position: absolute;
+    /*bottom: 0;*/
+}
+
+.rushbuy-btn {
+    height: 33px;
+    font-size: 14px;
+    width: 82.5px;
+    color: #fff;
+    text-align: center;
+    line-height: 33px;
+    border-radius: 5px;
+    float: left;
+    position: absolute;
+    right: 0;
+    margin-right: 6%;
+    margin-top: 58px;
+    font-weight: bold;
+}
+
+.rushbuy-bg-ray {
+    background-color: #ababab;
+}
+
+.rushbuy-bg-red {
+    background-color: #da0008;
+}
+
+/*list_item img {*/
+/*width: 72px;*/
+/*height: 99.5px;*/
+/*background-size: cover;*/
+/*background: url("../images/circlebg.png") center no-repeat;*/
+/*}*/

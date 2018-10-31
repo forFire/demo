@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+<head>
+    <title>限时秒杀</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles/swiper.css"/>
+    <link rel="stylesheet" href="styles/index.css"/>
+    <script src="scripts/libs/bridge.js"></script>
+    <script src="scripts/libs/swiper.js"></script>
+    <script data-main="main.js" src="scripts/libs/require.js"></script>
+
+    <script type="text/javascript">
+        window.share = {
+            title: '大卡双十一，卡友嘉年华',
+            desc: '购车万元优惠，参与活动手机冰箱免费送',
+            url: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            icon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationTitle: '大卡双十一，卡友嘉年华',
+            inStationDesc: '购车万元优惠，参与活动手机冰箱免费送',
+            inStationIcon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationUrl: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            // showShare:"0",
+            activeType: 'timelimit2018timelimit',
+            tag: '2018双11限时秒杀',
+            category: JSON.stringify(['0', '1', '2', '3', '4']),
+            events: JSON.stringify({
+                weixin: '20181111XsmsFxWxhy',
+                friend: '20181111XsmsFxWxpyq',
+                dynamic: '20181111XsmsFxKyq',
+                qq: '20181111XsmsFxQQhy',
+                partner: '20181111XsmsFxDkhb'
+            })
+        };
+
+    </script>
+</head>
+<body id="index">
+<section class="index" v-cloak>
+
+    <div class="list-head__rule" @click="open_rule">规则 ></div>
+    <div class="header-wrapper">
+        <img src="images/header.png">
+    </div>
+
+    <div class="bodybg" v-cloak>
+
+        <!--时间显示1-->
+        <div class="swiper-container swiper1" id="swiper1" v-cloak>
+            <div class="red-cover"></div>
+            <div class="swiper-wrapper">
+                <div v-for="(i,index) in toplist" class="swiper-slide" @click="swiperclick(index)">
+                    <div class="list-wapper">
+                        <div class="swiper-slide_time">{{inittime(i.limitTime)}}</div>
+                        <div class="swiper-slide_state">{{getstatus(i.status)}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--时间显示2-->
+        <div class="swiper-container swiper1 swiper1_copy hide01" id="swiper1_copy" v-cloak>
+            <div class="red-cover"></div>
+            <div class="swiper-wrapper">
+                <div v-for="(i,index) in toplist" class="swiper-slide" @click="swiperclick(index)">
+                    <div class="list-wapper">
+                        <div class="swiper-slide_time">{{inittime(i.limitTime)}}</div>
+                        <div class="swiper-slide_state">{{getstatus(i.status)}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--列表-->
+        <div class="swiper-container swiper2" v-cloak>
+            <div class="swiper-wrapper">
+                <div v-for="(i,index) in toplist" class="swiper-slide">
+                    <div class="list">
+                        <!--上滑、下拉列表加载-->
+                        <div class="main" id="MyScroller">
+                            <div class="list_item">
+                                <div class="goodswrap">
+                                    <!--mymap[index]-->
+                                    <dl class="goods" v-for="(i,index) in mymap[index]">
+                                        <dt class="goodsimg"><img :src="i.imgUrl"/></dt>
+                                        <dd class="goodstxt">
+                                            <p class="goodsname">{{i.desc}}</p>
+                                            <div class="goodprice">
+                                                <div class="div-inline">秒杀价:</div>
+                                                <div class="goodpricenumber">{{i.currentPrice}}</div>
+                                                <div class="div-inline">卡豆</div>
+                                            </div>
+                                            <p class="goodoldprice">原价：{{i.currentPrice}}元</p>
+                                        </dd>
+
+                                        <div v-if="i.buyStatus=='2'" class="rushbuy-btn rushbuy-bg-ray"
+                                             @click="exchangeclick(i.buyStatus,i.commodityId)">即将开抢</div>
+                                        <div v-else-if="i.buyStatus == '3'" class="rushbuy-btn rushbuy-bg-ray"
+                                             @click="exchangeclick(i.buyStatus,i.commodityId)">已抢光
+                                        </div>
+                                        <div v-else-if="i.buyStatus =='0' || i.buyStatus=='1'"
+                                             class="rushbuy-btn rushbuy-bg-red" @click="exchangeclick(i.buyStatus,i.commodityId)">立即抢兑
+                                        </div>
+
+                                        <div v-else class="rushbuy-btn rushbuy-bg-red" v-bind:buyStatus="i.buyStatus">
+                                            即将开抢
+                                        </div>
+                                        <div class="line"></div>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div id="rule" class="rule-container hide">
+        <div class="rule-wrapper">
+            <h3>活动规则</h3>
+            <div class="rule-wrapper__scroll">
+                <p>1、登录大卡账户即可参与限时秒杀活动。</p>
+                <p>2、每件商品秒杀的名额以产品上展示的数量为准。</p>
+                <p>3、数量有限，建议在设置中打开通知功能，避免错过商品。</p>
+                <p>4、秒杀资格：每个ID、地址，限一次秒杀机会，多次无效。</p>
+                <p>5、参与秒杀的用户以“时间兑换”的时间排序，先兑先得。</p>
+                <p>6、秒杀商品一旦成功兑换则不退不换。</p>
+                <p>7、活动期间秒杀成功的所有商品将在双11活动结束后7个工作日内发货。</p>
+                <p>8、双11期间所得的所有商品均不予售后处理，商品不退不换。</p>
+                <p>9、秒杀活动最终解释权归大卡所有。</p>
+            </div>
+            <div class="btn" @click="close_rule">知道了</div>
+        </div>
+    </div>
+
+</section>
+<div class="circle hide"><span class="circlecenter"></span></div>
+<div id="error-tips" class="error-tips hide"></div>
+</body>
+</html>

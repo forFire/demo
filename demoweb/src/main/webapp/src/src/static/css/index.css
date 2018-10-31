@@ -1,0 +1,98 @@
+
+
+#app{
+    position: absolute;
+    left: 0;
+    top: 0;bottom: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.opacity-enter-active,
+.opacity-leave-active {
+    opacity: 1;
+    transition: all .3s ease;
+}
+
+.opacity-enter,
+.opacity-leave-active {
+    opacity: 0
+}
+
+.slide-right-enter-active {
+    left: 0;
+    transition: all 1s ease;
+}
+
+.slide-right-leave-active {
+    left: 0;
+}
+
+.slide-right-enter,
+.slide-right-leave-active {
+    left: 100%;
+}
+
+.box {
+    width: 100%;
+    height: auto;
+    background: #f2f2f2;
+    position: relative;
+}
+.fixed-footer{
+    width: 100%;
+    height: 6rem;
+    border-top: 1px solid #dcdcdc;
+    position: fixed;bottom: 0;left: 0;
+    background: #fff;
+}
+.right-icon{
+    background: #fff url(../../assets/images/right-icon.png) no-repeat;
+    background-size: 0.7rem;
+    background-position: 90% center;
+
+}
+.right-icon-1{
+    background: #fff url(../../assets/images/right-icon.png) no-repeat;
+    background-size: 0.7rem;
+    background-position: 95% center;
+}
+.layer_input{
+    min-height:40px;width: 70%;margin: 0 auto;position: relative;font-size: 16px;
+}
+.layer_input p{
+    text-align: center;width: 100%;
+}
+.layer_input p:first-child{
+    margin-top: 2rem;
+}
+.layer_input p:last-child{
+    margin-bottom: 1rem;text-align: left;line-height: 2rem;height: 2rem;font-size: 1.4rem;
+}
+.layer_input input{
+    background: #f2f2f2;height: 40px;line-height: 40px;border-radius: 5px;padding:0 20px;width: 100%;margin: 10px 0;
+}
+.warn-msg{
+    color: red;visibility: hidden;
+    text-align: center;line-height: 2rem;height: 2rem;font-size: 1.4rem;
+}
+.layer_input span{
+    position: absolute;right: 10px;top: 10px;font-size: 16px;
+    display: block;;line-height: 40px;height: 40px;width: 20px;
+}
+.page-infinite-loading {
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 1.4rem;
+   
+}
+.page-infinite-loading div {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+a[title='站长统计']{
+ display: none;
+}

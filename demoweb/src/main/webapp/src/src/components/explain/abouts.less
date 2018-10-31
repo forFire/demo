@@ -1,0 +1,96 @@
+.invite{
+    width: 100%;height: 100%;
+    position: fixed;background: #fff;
+    bottom: 0;left: 0;right: 0;overflow: auto;
+    .box__marquee{
+        position: absolute;
+        width: 100%;
+        height: 4rem;
+        line-height: 4rem;
+        background: rgba(208,163,80,0.8);
+        color: #fff;
+        z-index: 10;
+        font-size: 1.4rem;
+    }
+    .daka_update_dialog{
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        position: absolute;
+        left: 0;top: 0;bottom: 0;
+        height: 100%;
+        z-index: 100;
+        overflow: hidden;
+        img{
+            width: 80%;
+        }
+    }
+    .invite-bg{
+        width: 100%;
+        min-height: auto;
+        &>div{
+            width: 100%;margin: 0 auto;
+            padding-bottom: 122%;
+            position: relative;
+            overflow: hidden;
+            background: url(../../assets/images/ewm-bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-position: center;
+            .invite-c{
+                width: 100%;
+                padding: 3rem 0;
+                overflow: hidden;
+                position: absolute;top:20%;
+                &>div{
+                    width: 54%;margin: 0 auto;
+                    padding-bottom: 54%;
+                    position: relative;
+                    overflow: hidden;
+                    &>img{
+                        display: block;
+                        background: #fff;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        left: 0;right: 0;
+                        bottom: 0;
+                    }
+                }
+               
+            }
+            .invite-evnt{
+                position: absolute;width: 25%;
+                height: 30%;
+                right: 0;top:10%;
+                &>div{
+                    width: 100%;
+                    height: 50%;
+                }
+            }
+        }
+        
+    }
+  
+    .invite-aside{
+        background: url(../../assets/images/special-icon.png) no-repeat;
+        background-size: 7rem;
+        background-position: top left;
+        padding-top: 2.4rem;
+        height: auto;
+        width: 90%;margin: 1.5rem auto;
+        &>div{
+            height: 4rem;line-height: 4rem;
+            background: #f2f2f2;border-radius: 5px;
+            .money-icon{
+                background: url(../../assets/images/money-icon.png) no-repeat;
+                background-size: 2rem;
+                background-position: left center;
+                padding-left: 2.5rem;font-weight: bold;
+                font-size: 1.4rem;color: #ff5805;
+            }
+        }
+        &>div:nth-child(n+2){
+            margin-top: 0.5rem;
+        }
+    }
+   
+}

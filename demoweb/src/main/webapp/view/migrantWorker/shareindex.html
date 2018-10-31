@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ta的兑换</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="" >
+    <meta name="description" content="" >
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles/shareindex.css?v=1.0.1" />
+    <script src="scripts/libs/bridge.js"></script>
+    <script data-main="main.js" src="scripts/libs/require.js"></script>
+    <script type="text/javascript">
+        window.share = {
+            title: '大卡双十一，卡友嘉年华',
+            desc: '购车万元优惠，参与活动手机冰箱免费送',
+            url: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            icon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationTitle: '大卡双十一，卡友嘉年华',
+            inStationDesc: '购车万元优惠，参与活动手机冰箱免费送',
+            inStationIcon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationUrl: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            // showShare:"0",
+            activeType: 'timelimit2018timelimit',
+            tag: '2018双11限时秒杀',
+            category: JSON.stringify(['0', '1', '2', '3', '4']),
+            events: JSON.stringify({
+                weixin: '20181111XsmsFxWxhy',
+                friend: '20181111XsmsFxWxpyq',
+                dynamic: '20181111XsmsFxKyq',
+                qq: '20181111XsmsFxQQhy',
+                partner: '20181111XsmsFxDkhb'
+            })
+        };
+
+    </script>
+  </head>
+  <body id="shareindex">
+    <section class="shareindex hide">
+      <div class="top">
+        <div class="goodsimg">
+          <div class="structurewrap">
+            <div class="imgwrap"><img v-bind:src="imgUrl"/></div>
+            <div class="mb"></div>
+          </div>
+        </div>
+        <p class="newhinttxt">讲真，我买这个没花钱~</p>
+        <p class="newhinttxt">我刚刚用 {{goodsinfo.peasNum}}卡豆兑换了{{goodsinfo.name}}</p>
+        <div class="btnwrap"><span class="btn">我也要兑换</span></div>
+      </div>
+    </section>
+    <div id="error-tips" class="error-tips hide"></div>
+  </body>
+</html>

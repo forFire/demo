@@ -1,0 +1,181 @@
+html, body, * {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: '黑体';
+  font-style: normal;
+  list-style-type: none;
+}
+html:after, html::before, body:after, body::before, *:after, *::before {
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  margin: 0 auto; 
+  background:#f2f2f2;
+}
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.half-line {
+  background-color: #000;
+}
+.half-line.vertical {
+  height: 100%;
+  width: 1px;
+  transform: scaleX(0.5);
+}
+.half-line.horizontal {
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+@-webkit-keyframes fadeOut{
+  0%{
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.error-tips {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -120px;
+  width: 240px;
+  height: auto;
+  padding: 10px 20px;
+  line-height: 20px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.error-tips.fade-out {
+  animation: fadeOut 2s ease-in-out;
+}
+a[href*="http://www.cnzz.com/stat/website.php"]{
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+.maximg{
+  width: 100%;
+  height: 100%;
+}
+img {
+  display: block;
+  width: 100%;
+}
+/* 业务逻辑代码 */
+.result{
+  width: 100%;
+  overflow:hidden; 
+  padding-bottom: 10px;
+}
+.top{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 10px;
+  background-color: #fff;
+  padding-bottom: 35px;
+}
+.goodsimg{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 15px;
+}
+.imgwrap{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+}
+.imgwrap img{
+  object-fit: cover;
+}
+.structurewrap{
+  position: relative;
+  width: 46%;
+  overflow: hidden;
+  margin: 0 auto;
+  background-color: #fafafa;
+}
+.structurewrap .mb{
+  margin-bottom: 64%;
+}
+.successtxt {
+  margin-top: 20px;
+  font-size: 22px;
+  color: #fd8709;
+  text-align: center;
+}
+.hinttxt{
+  color: #242424;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 19%;
+  margin-top: 18px;
+}
+.btnwrap{
+  width: 100%;
+  overflow: hidden;
+  margin-top: 24px;
+}
+.btnwrap .btn{
+  display: block;
+  width: 72%;
+  height: 42px;
+  line-height: 42px;
+  background-color: #fd8709;
+  color: #fff;
+  margin: 0 auto;
+  border-radius: 3px;
+  font-size: 16px;
+  text-align: center;
+}
+.exchangeprogram{
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 15px 60px;
+}
+.exchangetit{
+  font-size: 15px;
+  color: #242424;
+  margin: 15px 0;
+}
+.comarticle {
+    font-size: 14px;
+    color: #242424;
+    line-height: 22px;
+    margin-top: 3px;
+}

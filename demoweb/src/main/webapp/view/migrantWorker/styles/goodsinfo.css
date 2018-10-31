@@ -1,0 +1,363 @@
+html, body, * {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  outline: none;
+  box-sizing: border-box;
+  font-size: 62.5%;
+  font-family: '黑体';
+  font-style: normal;
+  list-style-type: none;
+}
+html:after, html::before, body:after, body::before, *:after, *::before {
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  max-width: 750px;
+  margin: 0 auto; 
+  background:#fafafa;
+}
+.hide {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.half-line {
+  background-color: #000;
+}
+.half-line.vertical {
+  height: 100%;
+  width: 1px;
+  transform: scaleX(0.5);
+}
+.half-line.horizontal {
+  width: 100%;
+  height: 1px;
+  transform: scaleY(0.5);
+}
+
+@-webkit-keyframes fadeOut{
+  0%{
+    opacity: 1;
+  }
+  66% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.error-tips {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -50px;
+  margin-left: -120px;
+  width: 240px;
+  height: auto;
+  padding: 10px 20px;
+  line-height: 20px;
+  font-size: 15px;
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  border-radius: 3px;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+}
+.error-tips.fade-out {
+  animation: fadeOut 2s ease-in-out;
+}
+a[href*="http://www.cnzz.com/stat/website.php"]{
+  display: none;
+}
+
+.clear {
+  clear: both;
+}
+.maximg{
+  width: 100%;
+  height: 100%;
+}
+img {
+  display: block;
+  width: 100%;
+}
+/* 业务逻辑代码 */
+.goodsinfo{
+  width: 100%;
+  overflow:hidden; 
+  padding-bottom: 60px;
+}
+.topwrap{
+  width: 100%;
+  overflow: hidden;
+}
+.topimgwrap{
+  width: 100%;
+  overflow: hidden;
+}
+.baseinfo{
+  width: 100%;
+  height: 65px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+.basedl{
+  width: 100%;
+  overflow: hidden;
+}
+.basedt{
+  float: left;
+  line-height: 20px;
+}
+.basedd{
+  float: right;
+}
+.basedd span{
+  font-size: 16px;
+  color: #fd8709;
+}
+.basedd em{
+  color: #fd8709;
+  font-size: 12px;
+}
+.goodsname{
+  font-size: 16px;
+  color: #242424;
+}
+.originalprice{  
+  font-family: "微软雅黑";
+  height: 20px;
+  line-height: 20px;
+}
+.originalprice s,.originalprice span{
+  font-size: 12px;
+  color: #999;
+  font-family: "微软雅黑";
+}
+.describewrap{
+  width: 100%;
+  overflow: hidden; 
+  background-color:#fff; 
+}
+.describe{
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 15px;
+}
+.infowrap{
+  width: 100%;
+  overflow: hidden; 
+  padding-left: 15px;
+  background-color:#fff; 
+}
+.combox{
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 0;
+}
+.comtit{
+  font-size: 15px;
+  color: #242424;
+  margin-bottom: 15px;
+}
+.comarticle,.comarticle span{
+  font-size: 14px;
+  color: #242424;
+  line-height: 24px;
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #efefef;
+  transform:scale(1,0.5);
+  -webkit-transform:scale(1,0.5);
+  -o-transform:scale(1,0.5);
+  -ms-transform:scale(1,0.5);
+  -moz-transform:scale(1,0.5);
+  margin-top: 20px;
+}
+.newline{
+  width: 100%;
+  height: 1px;
+  background-color: #efefef;
+  transform:scale(1,0.5);
+  -webkit-transform:scale(1,0.5);
+  -o-transform:scale(1,0.5);
+  -ms-transform:scale(1,0.5);
+  -moz-transform:scale(1,0.5);
+}
+/*.btnwrap{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 48px;
+  overflow: hidden;
+}*/
+.btnwrap {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    background-color: #fff;
+    padding: 10px;
+}
+.btnwrap:before{
+  content: '';
+  position: absolute;
+  left:0; 
+  right:0;
+  top: 0;
+  right: 0;
+  width: 200%;
+  height: 1px;
+  background-color:#efefef; 
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  -o-transform-origin: 0 0;
+  transform-origin: 0 0;
+  -webkit-transform: scale(0.5, 0.5);
+  -ms-transform: scale(0.5, 0.5);
+  -o-transform: scale(0.5, 0.5);
+  transform: scale(0.5, 0.5);
+}
+/*.btnwrap span{
+  display: block;
+  width: 100%;
+  height: 48px;
+  line-height: 48px;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  background-color: #fd8709; 
+}*/
+.btnwrap span {
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+.background-red{
+    background-color: #fd8709;
+}
+
+.background_gray{
+    background-color: #ababab;
+}
+
+.btnwrap .graybtn{
+  background-color: #999;
+}
+.mask{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
+  background-color:rgba(0,0,0,0.5); 
+}
+.maskwrap{
+  width: 272px;
+  height: 145px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -72.5px;
+  margin-left: -136px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+.hinttxt{
+  font-size: 18px;
+  color: #242424;
+  padding: 0 20px;
+  margin-top: 30px;
+  height: 42px;
+}
+.maskbtn{
+  position: relative;
+  width: 100%;
+  height: 44px;
+  overflow: hidden;
+  margin-top: 29px;
+}
+.maskbtn span{
+  float: left;
+  width: 50%;
+  height: 44px;
+  line-height: 44px;
+}
+.maskbtn .l{
+  position: relative;
+  font-size: 18px;
+  color: #242424;
+  text-align: center;
+}
+.maskbtn .r{
+  position: relative;
+  font-size: 18px;
+  color: #fe8709;
+  text-align: center;
+}
+.maskbtn .l:after{
+   content: '';
+   position: absolute;
+   bottom: 0; 
+   right:0;
+   top: 0;
+   right: 0;
+   width: 1px;
+   height: 88px;
+   background-color:#efefef; 
+   -webkit-transform-origin: 0 0;
+   -moz-transform-origin: 0 0;
+   -ms-transform-origin: 0 0;
+   -o-transform-origin: 0 0;
+   transform-origin: 0 0;
+   -webkit-transform: scale(0.5, 0.5);
+   -ms-transform: scale(0.5, 0.5);
+   -o-transform: scale(0.5, 0.5);
+   transform: scale(0.5, 0.5);
+}
+.maskbtn:after{
+   content: '';
+   position: absolute;
+   left:0; 
+   right:0;
+   top: 0;
+   right: 0;
+   width: 200%;
+   height: 1px;
+   background-color:#efefef; 
+   -webkit-transform-origin: 0 0;
+   -moz-transform-origin: 0 0;
+   -ms-transform-origin: 0 0;
+   -o-transform-origin: 0 0;
+   transform-origin: 0 0;
+   -webkit-transform: scale(0.5, 0.5);
+   -ms-transform: scale(0.5, 0.5);
+   -o-transform: scale(0.5, 0.5);
+   transform: scale(0.5, 0.5);
+}

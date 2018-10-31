@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+    <title>填写收货人信息</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles/getaddressinfo.css?v=1.0.1"/>
+    <script src="scripts/libs/bridge.js"></script>
+    <script data-main="main.js" src="scripts/libs/require.js"></script>
+    <script type="text/javascript">
+        window.share = {
+            title: '大卡双十一，卡友嘉年华',
+            desc: '购车万元优惠，参与活动手机冰箱免费送',
+            url: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            icon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationTitle: '大卡双十一，卡友嘉年华',
+            inStationDesc: '购车万元优惠，参与活动手机冰箱免费送',
+            inStationIcon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationUrl: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            // showShare:"0",
+            activeType: 'timelimit2018timelimit',
+            tag: '2018双11限时秒杀',
+            category: JSON.stringify(['0', '1', '2', '3', '4']),
+            events: JSON.stringify({
+                weixin: '20181111XsmsFxWxhy',
+                friend: '20181111XsmsFxWxpyq',
+                dynamic: '20181111XsmsFxKyq',
+                qq: '20181111XsmsFxQQhy',
+                partner: '20181111XsmsFxDkhb'
+            })
+        };
+
+    </script>
+</head>
+<body id="getaddressinfo">
+<section class="getgoodsinfo">
+    <dl class="notice">
+        <dt>注意：</dt>
+        <dd>为确保您能收到物品，请正确填写收货人信息</dd>
+    </dl>
+    <div class="infowrap">
+        <dl class="dlrow">
+            <dt class="l">收货人</dt>
+            <dd class="r"><input placeholder="请输入收货人姓名" type="text" id="userName" maxLength="20"/></dd>
+        </dl>
+        <dl class="dlrow">
+            <dt class="l">联系电话</dt>
+            <dd class="r"><input placeholder="请输入电话号码" type="tel" autocomplete="off"
+                                 onkeyup="this.value=this.value.replace(/\D/g,'')"
+                                 onafterpaste="this.value=this.value.replace(/\D/g,'')" maxLength="11" id="phone"/></dd>
+        </dl>
+        <dl class="dlrow pseudo">
+            <dt class="l">所在地区</dt>
+            <dd class="r"><span class="chose">请选择</span></dd>
+        </dl>
+        <dl>
+            <dt class="address">详细地址</dt>
+            <dd class="addresstxt"><textarea placeholder="请填写详细收货地址" id="details"></textarea></dd>
+        </dl>
+    </div>
+    <div class="btnwrap"><span id="sure">确定</span></div>
+</section>
+<div class="zonewrap hide">
+    <div class="basic-information">
+        <div class="province">
+            <ul id="classa_div"></ul>
+        </div>
+    </div>
+    <div class="basic-information1">
+        <div class="city">
+            <ul id="classb_div"></ul>
+        </div>
+    </div>
+</div>
+<div id="error-tips" class="error-tips hide"></div>
+</body>
+</html>

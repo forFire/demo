@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+<head>
+    <title>商品详情</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles/goodsinfo.css?v=1.0.1"/>
+    <script src="scripts/libs/bridge.js"></script>
+    <script data-main="main.js" src="scripts/libs/require.js"></script>
+    <script type="text/javascript">
+        window.share = {
+            title: '大卡双十一，卡友嘉年华',
+            desc: '购车万元优惠，参与活动手机冰箱免费送',
+            url: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            icon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationTitle: '大卡双十一，卡友嘉年华',
+            inStationDesc: '购车万元优惠，参与活动手机冰箱免费送',
+            inStationIcon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationUrl: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            // showShare:"0",
+            activeType: 'timelimit2018timelimit',
+            tag: '2018双11限时秒杀',
+            category: JSON.stringify(['0', '1', '2', '3', '4']),
+            events: JSON.stringify({
+                weixin: '20181111XsmsFxWxhy',
+                friend: '20181111XsmsFxWxpyq',
+                dynamic: '20181111XsmsFxKyq',
+                qq: '20181111XsmsFxQQhy',
+                partner: '20181111XsmsFxDkhb'
+            })
+        };
+
+    </script>
+</head>
+<body id="goodsinfo">
+<section class="goodsinfo hide">
+    <div class="topwrap">
+        <div class="topimgwrap">
+            <img v-bind:src="imgUrl"/>
+        </div>
+        <div class="baseinfo">
+            <dl class="basedl">
+                <dt class="basedt">
+                    <p class="goodsname">{{goodsinfo.name}}</p>
+                    <p class="originalprice"><s>￥<span>{{goodsinfo.originalPeas}}</span></s></p>
+                </dt>
+                <dd class="basedd"><span>{{goodsinfo.peasNum}}</span><em>卡豆</em></dd>
+            </dl>
+        </div>
+    </div>
+    <div class="describewrap">
+        <div class="newline"></div>
+        <div class="describe" v-html="goodsinfo.intro">
+
+        </div>
+        <div class="newline"></div>
+    </div>
+    <!-- <div class="infowrap">
+      <div class="combox">
+        <h2 class="comtit">活动时间</h2>
+        <p class="comarticle"><span>5月13日</span><span>-</span><span>6月30日</span></p>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="infowrap">
+      <div class="combox">
+        <h2 class="comtit">兑换流程</h2>
+        <p class="comarticle">1.点击【马上兑换】，消耗28W 卡豆，兑换流程兑换流程</p>
+        <p class="comarticle">2.点击【马上兑换】，消耗28W 卡豆，兑换流程兑换流程</p>
+        <p class="comarticle">3.点击【马上兑换】，消耗28W 卡豆，兑换流程兑换流程</p>
+        <p class="comarticle">4.点击【马上兑换】，消耗28W 卡豆，兑换流程兑换流程</p>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="infowrap">
+      <div class="combox">
+        <h2 class="comtit">注意事项</h2>
+        <p class="comarticle">1.注意事项注意事项注意事项注意事项注意事项</p>
+        <p class="comarticle">2.注意事项注意事项注意事项注意事项注意事项</p>
+        <div class="line"></div>
+      </div>
+    </div> -->
+
+    <div class="btnwrap" v-if="buyStatus=='1'"><span class="background_gray">已抢光</span></div>
+    <div class="btnwrap" v-else-if="buyStatus=='2'"><span class="background_gray">即将开始</span></div>
+    <div class="btnwrap" v-else-if="buyStatus =='0'"><span id="btn" class="background-red">立即兑换</span></div>
+
+    <!--<div v-if="buyStatus=='1'" class="rushbuy-btn rushbuy-bg-ray">已抢光</div>-->
+    <!--<div v-else-if="buyStatus=='2'" class="rushbuy-btn rushbuy-bg-ray">即将开始</div>-->
+    <!--<div v-else-if="buyStatus =='0'" class="rushbuy-btn rushbuy-bg-red">立即兑换</div>-->
+
+    <!--<div v-else class="rushbuy-btn rushbuy-bg-red">即将开抢</div>-->
+
+    <div class="mask hide" id="mask01">
+        <div class="maskwrap">
+            <p class="hinttxt">确定消耗{{goodsinfo.peasNum}}卡豆兑换该商品？</p>
+            <div class="maskbtn">
+                <span class="l">取消</span>
+                <span class="r" id="r01">确定</span>
+            </div>
+        </div>
+    </div>
+    <div class="mask hide" id="mask02">
+        <div class="maskwrap">
+            <p class="hinttxt">卡豆不足，请充值卡豆后再兑换秒杀商品</p>
+            <div class="maskbtn">
+                <span class="l">取消</span>
+                <span class="r" id="r02">去充值</span>
+            </div>
+        </div>
+    </div>
+</section>
+<div id="error-tips" class="error-tips hide"></div>
+</body>
+</html>

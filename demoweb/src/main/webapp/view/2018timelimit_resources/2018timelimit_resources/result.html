@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+    <title>兑换结果</title>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="full-screen" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="full-screen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="styles/result.css?v=1.0.1"/>
+    <script src="scripts/libs/bridge.js"></script>
+    <script data-main="main.js" src="scripts/libs/require.js"></script>
+    <script type="text/javascript">
+        window.share = {
+            title: '大卡双十一，卡友嘉年华',
+            desc: '购车万元优惠，参与活动手机冰箱免费送',
+            url: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            icon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationTitle: '大卡双十一，卡友嘉年华',
+            inStationDesc: '购车万元优惠，参与活动手机冰箱免费送',
+            inStationIcon: location.protocol + '//' + location.host + '/h5-mobile-api/collection/images/daka.jpg',
+            inStationUrl: location.protocol + '//' + location.host + '/h5-mobile-api/collection/meeting.html',
+            // showShare:"0",
+            activeType: 'timelimit2018timelimit',
+            tag: '2018双11限时秒杀',
+            category: JSON.stringify(['0', '1', '2', '3', '4']),
+            events: JSON.stringify({
+                weixin: '20181111XsmsFxWxhy',
+                friend: '20181111XsmsFxWxpyq',
+                dynamic: '20181111XsmsFxKyq',
+                qq: '20181111XsmsFxQQhy',
+                partner: '20181111XsmsFxDkhb'
+            })
+        };
+
+    </script>
+</head>
+<body id="result">
+<section class="result">
+    <div class="top">
+        <div class="goodsimg">
+            <div class="structurewrap">
+                <div class="imgwrap"><img v-bind:src="imgUrl"/></div>
+                <div class="mb"></div>
+            </div>
+        </div>
+        <p class="successtxt">恭喜您兑换成功！</p>
+        <p class="hinttxt">感谢您的兑换，您兑换的商品将在双11活动结束后，3个工作日内统一发货</p>
+        <div class="btnwrap"><span class="btn">炫耀一下</span></div>
+    </div>
+    <div class="exchangeprogram">
+        <h2 class="exchangetit">兑换流程</h2>
+        <p class="comarticle">1.当卡豆总数大于商品兑换所需卡豆时，可自行申请兑换礼品。</p>
+        <p class="comarticle">2.卡豆兑换礼品后，将自动扣除对应的卡豆数。</p>
+        <p class="comarticle">3.为了保证礼品可以顺利到达您的手中，兑换时请完成实名认证。</p>
+        <!--   <p class="comarticle">4.车旺大卡客服会在兑换后24小时内联系您，3日内为您安排发货，邮费由车旺大卡承担。</p> -->
+        <p class="comarticle">4.双十一活动期间，在大卡平台兑换的所有商品将在双11活动结束后的3个工作日内统一发货，邮费由车旺大卡承担。</p>
+        <p class="comarticle">5.活动最终解释权由车旺大卡所有。</p>
+        <p class="comarticle">6.卡豆兑换规则最终解释权归车旺大卡所有。</p>
+    </div>
+</section>
+</body>
+</html>
